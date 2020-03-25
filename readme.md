@@ -1,5 +1,6 @@
 Readme of english version refers to [Readme_EN.md](https://github.com/cdhigh/KindleEar/blob/master/readme_EN.md)
 
+# 个人安装手顺
 
 * 文件路径已经加入注册表 在path里面没有 不需要指定就可以找到python的可执行文件(C:\Python27\)
 
