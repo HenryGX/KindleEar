@@ -1,4 +1,4 @@
-application: kindleear
+application: python-2-test-272202
 version: 1
 module: worker
 runtime: python27
