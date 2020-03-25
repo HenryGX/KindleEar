@@ -1,5 +1,26 @@
 Readme of english version refers to [Readme_EN.md](https://github.com/cdhigh/KindleEar/blob/master/readme_EN.md)
 
+
+* 文件路径已经加入注册表 在path里面没有 不需要指定就可以找到python的可执行文件(C:\Python27\)
+
+* GAE SDK 的路径 (C:\Program Files (x86)\Google\Cloud SDK)
+
+* 安装 app-engine-python 组件 (gcloud components install app-engine-python)
+  `set PYTHONIOENCODING=UTF-8`
+
+* 测试 项目 appid  (python-2-test-*****)
+
+* 项目路径 (/d/Project/KindleEar)
+
+* 进入google app-engine-python 组件 目录
+
+* 部署项目 (python appcfg.py update D:\Project\KindleEar\app.yaml D:\Project\KindleEar\module-worker.yaml
+)
+
+*  更新项目 (python appcfg.py update D:\Project\KindleEar)
+   
+   cd C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\platform\google_appengine>
+
 # 简介
 这是一个运行在Google App Engine(GAE)上的Kindle个人推送服务应用，生成排版精美的杂志模式mobi/epub格式自动每天推送至您的Kindle或其他邮箱。
 
