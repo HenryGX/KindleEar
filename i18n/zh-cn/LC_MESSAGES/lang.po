@@ -542,6 +542,9 @@ msgstr "期刊"
 msgid "Persian"
 msgstr "波斯语"
 
+msgid "testlink"
+msgstr "测试链接"
+
 msgid "Personal Document Settings"
 msgstr "个人文档设置"
 
