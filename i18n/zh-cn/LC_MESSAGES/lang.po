@@ -791,6 +791,9 @@ msgstr "邮箱或用户名"
 msgid "Shared"
 msgstr "网友分享"
 
+msgid "testLink"
+msgstr "测试链接"
+
 msgid "This feed has been successfully subscribed."
 msgstr "已经成功订阅了此订阅源。"
 

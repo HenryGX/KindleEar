@@ -152,6 +152,11 @@
                     {% else -%}
                     <li class="pure-menu-item"><a href="/library" class="pure-menu-link">{{_("Shared")}}</a></li>
                     {% endif -%}
+                    {% if current == "testLink" -%}
+                    <li class="pure-menu-item pure-menu-selected"><span>{{_("testLink")}}</span></li>
+                    {% else -%}
+                    <li class="pure-menu-item"><a href="/testLink" class="pure-menu-link">{{_("testLink")}}</a></li>
+                    {% endif -%}
                 </ul>
             </div>
             {% endif -%}
