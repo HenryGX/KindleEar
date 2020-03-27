@@ -10,48 +10,36 @@ import gettext
 from collections import defaultdict
 from apps.BaseHandler import BaseHandler
 from apps.dbModels import *
-from apps.utils import local_time
-from books import BookClass
-
-from google.appengine.api import app_identity
+from apps.MyParser import MyParser
+import urllib2
 from google.appengine.api import mail
-import webapp2
 
-from google.appengine.api import taskqueue
-
-class ReptileTask(webapp2.RequestHandler):
+class ReptileTask(BaseHandler):
     __url__ = "/reptileTask"
  
-#     def GET(self):
-#         reptiles = ReptileSetup.all()
-#         #定时cron调用
-#         sentcnt = 0
-
-
     def GET(self):
         reptiles = ReptileSetup.all()
         #定时cron调用
-        sentcnt = 0
-        fromMail = "ws00381493@gmail.com"
-        toMail = "ws00381493@gmail.com"
-        taskqueue.add(url='/worker', queue_name="deliverqueue1", method='GET',
-                params=param, target="worker")
+        #如何返回结果变动的情况下送信
+        #self.send_approved_mail("ws00381493@gmail.com")
 
-
-
-# def send_approved_mail(sender_address):
-#     # [START send_mail]
-#     mail.send_mail(sender=sender_address,
-#                    to="Henry Zhang <ws00381493@gmail.com>",
-#                    subject="Your account has been approved",
-#                    body="aaa")
-#     # [END send_mail]
-
-
-# class ReptileTask(BaseHandler):
-#     __url__ = "/reptileTask"
-#     def get(self):
-#         send_approved_mail("ws00381493@gmail.com")
+        #my = MyParser()
+        #my.setUserName(main.session.get('username', ''))
+        # url = "https://www.costco.co.jp/search/?text=%E3%83%9E%E3%82%B9%E3%82%AF"
         
-#         return "Put <strong>3</strong> books to queue!"
+        # req = urllib2.Request(url)
+        # response = urllib2.urlopen(req)
+        # htmlStr = response.read()    
+        # my.feed(htmlStr)
+
+        self.send_approved_mail("ws00381493@gmail.com","admin")
+        
+
+    #邮件发送函数
+    def send_approved_mail(self,sender_address,testName):
+        # [START send_mail]
+        mail.send_mail(sender=sender_address,
+                       to="Henry Zhang <ws00381493@gmail.com>",
+                       subject="口罩在库更新提示邮件"+testName,
+                       body="""口罩在库更新喽！""")
 

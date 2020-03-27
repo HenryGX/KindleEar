@@ -12,6 +12,7 @@ import web
 from apps.BaseHandler import BaseHandler
 from apps.dbModels import *
 from lib.urlopener import URLOpener
+from google.appengine.api import urlfetch
 
 #网友共享的订阅源数据
 class testLink(BaseHandler):
@@ -21,9 +22,7 @@ class testLink(BaseHandler):
     def GET(self,tips=None):
         user = self.getcurrentuser()
         reptile = self.getReptile()
-        #当前title位置
-        #current='testlink'
-        return self.render('testlink.html', "testlink", current='testlink', user=user, reptile=reptile, tips=tips)
+        return self.render('testlink.html', "testlink", current='testlink', user=user, reptile=reptile, tips=tips, res=None)
 
     #分享了一个订阅源
     def POST(self):
@@ -40,5 +39,5 @@ class testLink(BaseHandler):
             reptile.url = url
             reptile.put()
             tips = _("Settings Saved!")
-            
+
         return self.GET(tips)
