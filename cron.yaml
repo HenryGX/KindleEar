@@ -1,3 +1,4 @@
+#计时器文件
 cron:
 - description: add deliver task to queue
   url: /deliver
@@ -7,4 +8,8 @@ cron:
   url: /removelogs
   schedule: every day 03:00
   timezone: Asia/Shanghai
+
+- description: reptile task
+  url: /reptileTask
+  schedule: every 5 minutes
   

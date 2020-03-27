@@ -32,7 +32,7 @@ class BaseHandler(object):
             if not main.session.get('lang'):
                 main.session.lang = self.browerlang()
             set_lang(main.session.lang)
-        
+
     @classmethod
     def logined(self):
         return True if main.session.get('login') == 1 else False
@@ -266,3 +266,17 @@ class BaseHandler(object):
                         img['src'] = data
             
         return unicode(soup)
+
+    @classmethod
+    def getReptile(self, forAjax=False):
+        #如果设置不存在新建
+        r = ReptileSetup.all().filter("name = ", main.session.get('username', '')).get()
+        if not r:            
+            setR = ReptileSetup(name=main.session.get('username', ''),email='')
+            setR.put()
+            
+        rs = ReptileSetup.all().filter("name = ", main.session.get('username', '')).get()
+        if not rs:
+            raise web.seeother(r'/needloginforajax' if forAjax else r'/login')
+
+        return rs

@@ -177,3 +177,10 @@ class SharedRss(db.Model):
 class SharedRssCategory(db.Model):
     name = db.StringProperty()
     last_updated = db.DateTimeProperty() #for sort
+
+#爬虫设定
+class ReptileSetup(db.Model):
+    name = db.StringProperty() #username
+    email = db.StringProperty()  #email
+    url = db.StringProperty()  #email
+    corn_time = db.StringProperty()  #email

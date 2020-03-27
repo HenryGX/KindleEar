@@ -13,7 +13,7 @@ import webapp2
 from google.appengine.ext.webapp.mail_handlers import InboundMailHandler
 from google.appengine.api import taskqueue
 
-from apps.dbModels import KeUser, Book, WhiteList
+from apps.dbModels import ReptileSetup, KeUser, Book, WhiteList
 from apps.BaseHandler import BaseHandler
 from apps.utils import local_time
 from config import *
