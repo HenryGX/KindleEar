@@ -184,3 +184,18 @@ class ReptileSetup(db.Model):
     email = db.StringProperty()  #email
     url = db.StringProperty()  #email
     corn_time = db.StringProperty()  #email
+
+#爬虫设定
+class history(db.Model):
+    username = db.StringProperty() #username
+    name = db.StringProperty()  #name
+    url = db.StringProperty()  #url
+    count = db.StringProperty()  #url
+    seq = db.StringProperty()  #url
+
+#爬虫设定
+class oldhistory(db.Model):
+    username = db.StringProperty() #username
+    name = db.StringProperty()  #name
+    url = db.StringProperty()  #url
+    count =  db.StringProperty()  #url

@@ -14,6 +14,7 @@ from apps.dbModels import *
 from lib.urlopener import URLOpener
 from google.appengine.api import urlfetch
 
+
 #网友共享的订阅源数据
 class testLink(BaseHandler):
     __url__ = "/testlink"
@@ -22,6 +23,7 @@ class testLink(BaseHandler):
     def GET(self,tips=None):
         user = self.getcurrentuser()
         reptile = self.getReptile()
+
         return self.render('testlink.html', "testlink", current='testlink', user=user, reptile=reptile, tips=tips, res=None)
 
     #分享了一个订阅源

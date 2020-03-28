@@ -9,7 +9,7 @@ cron:
   schedule: every day 03:00
   timezone: Asia/Shanghai
 
-#- description: reptile task
-#  url: /reptileTask
-#  schedule: every 5 minutes
+- description: reptile task
+  url: /reptileTask
+  schedule: every 5 minutes
   
