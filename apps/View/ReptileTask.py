@@ -32,7 +32,7 @@ class ReptileTask(BaseHandler):
         #取得历史count数
         hs = history.all().filter("name = ", reptiles.name).get()
 
-        #爬虫类实例化
+        #爬虫类实例化 在实例化的函数中解析HTML
         my = MyParser()
         req = urllib2.Request(url)
         response = urllib2.urlopen(req)
